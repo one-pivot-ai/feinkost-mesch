@@ -4,6 +4,7 @@ import Specialties from "@/components/Specialties";
 import Catering from "@/components/Catering";
 import About from "@/components/About";
 import OpeningHours from "@/components/OpeningHours";
+import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -17,6 +18,7 @@ export default function Home() {
         <Catering />
         <About />
         <OpeningHours />
+        <FAQ />
         <Contact />
       </main>
       <Footer />

@@ -1,33 +1,85 @@
 @import "tailwindcss";
 
-/* ──────────────────────────────────────────
-   Design-System Feinkost Mesch
-   Warm-dark Premium-Palette
-────────────────────────────────────────── */
+/* ── Custom Properties ────────────────────────────────
+   Light mode (:root) und Dark mode (.dark class)
+───────────────────────────────────────────────────── */
+:root {
+  --background:          #faf7f0;
+  --foreground:          #2b2118;
+  --surface:             #ffffff;
+  --surface-muted:       #f5efe3;
+  --footer-bg:           #ede8dc;
+
+  --border:              #e7dccb;
+
+  --muted:               #6f6254;
+  --muted-light:         #8c7d6d;
+
+  --accent:              #7a8b45;
+  --accent-foreground:   #ffffff;
+
+  --gold:                #c49a3c;
+  --terracotta:          #b85c38;
+
+  /* Invertierte Karte (dunkle Karte auf hellem Hintergrund) */
+  --card-dark:           #2b2118;
+  --card-dark-text:      #faf7f0;
+  --card-dark-muted:     rgba(250, 247, 240, 0.55);
+  --card-dark-accent:    #c49a3c;
+
+  --nav-bg:              rgba(250, 247, 240, 0.92);
+
+  /* Hero-Overlay-Gradients */
+  --hero-from:           rgba(43, 33, 24, 0.82);
+  --hero-via:            rgba(43, 33, 24, 0.28);
+  --hero-side:           rgba(43, 33, 24, 0.38);
+}
+
+.dark {
+  --background:          #0a0806;
+  --foreground:          #ede9e3;
+  --surface:             #131009;
+  --surface-muted:       #1c1812;
+  --footer-bg:           #050402;
+
+  --border:              rgba(255, 255, 255, 0.08);
+
+  --muted:               #8a8078;
+  --muted-light:         #8c8174;
+
+  --accent:              #c49a3c;
+  --accent-foreground:   #0a0806;
+
+  --gold:                #c49a3c;
+  --terracotta:          #d07a52;
+
+  --card-dark:           #131009;
+  --card-dark-text:      #ede9e3;
+  --card-dark-muted:     rgba(237, 233, 227, 0.50);
+  --card-dark-accent:    #c49a3c;
+
+  --nav-bg:              rgba(10, 8, 6, 0.92);
+
+  --hero-from:           rgba(10, 8, 6, 1.0);
+  --hero-via:            rgba(10, 8, 6, 0.55);
+  --hero-side:           rgba(10, 8, 6, 0.60);
+}
+
+/* ── Tailwind v4 Theme-Tokens ───────────────────── */
 @theme inline {
-  /* Hintergründe */
-  --color-bg-darkest:   #0A0806;
-  --color-bg-dark:      #131009;
-  --color-bg-mid:       #1C1812;
-  --color-bg-warm:      #F7F3EC;
-  --color-bg-card:      #221E17;
+  --color-background:          var(--background);
+  --color-foreground:          var(--foreground);
+  --color-surface:             var(--surface);
+  --color-surface-muted:       var(--surface-muted);
+  --color-footer-bg:           var(--footer-bg);
+  --color-border:              var(--border);
+  --color-muted:               var(--muted);
+  --color-muted-light:         var(--muted-light);
+  --color-accent:              var(--accent);
+  --color-accent-foreground:   var(--accent-foreground);
+  --color-gold:                var(--gold);
+  --color-terracotta:          var(--terracotta);
 
-  /* Akzente */
-  --color-gold:         #C49A3C;
-  --color-gold-light:   #D4AF5A;
-  --color-olive:        #4A7A12;
-  --color-olive-light:  #6AAF2E;
-
-  /* Text */
-  --color-text-light:   #EDE9E3;
-  --color-text-muted:   #8A8078;
-  --color-text-warm:    #2D2820;
-
-  /* Borders */
-  --color-border-dark:  rgba(255,255,255,0.08);
-  --color-border-warm:  rgba(196,154,60,0.2);
-
-  /* Fonts */
   --font-sans:    var(--font-dm-sans);
   --font-display: var(--font-cormorant);
 }
@@ -37,11 +89,11 @@ html {
 }
 
 body {
-  background: #0A0806;
-  color: #EDE9E3;
+  background: var(--background);
+  color: var(--foreground);
 }
 
-/* ── Scroll-Reveal ─────────────────────── */
+/* ── Scroll-Reveal ──────────────────────────────── */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
@@ -57,33 +109,126 @@ body {
 .reveal-d3 { transition-delay: 240ms; }
 .reveal-d4 { transition-delay: 320ms; }
 
-/* ── Eyebrow-Label ──────────────────────── */
+/* ── Eyebrow-Label ──────────────────────────────── */
 .eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  color: #C49A3C;
+  color: var(--accent);
   font-weight: 600;
   font-size: 0.7rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-.eyebrow::before,
+.eyebrow::before {
+  display: none;
+}
 .eyebrow::after {
   content: '';
   display: block;
   width: 28px;
   height: 1px;
-  background: #C49A3C;
+  background: var(--accent);
   flex-shrink: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s;
 }
-.eyebrow::before { display: none; }
+.reveal.is-visible .eyebrow::after {
+  transform: scaleX(1);
+}
 
-/* ── Grid-Row expand (Bug-freier Collapse) */
-.expand-grid {
-  display: grid;
-  transition: grid-template-rows 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+/* ── View Transition: Theme-Wechsel ──────────────── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
-.expand-grid.open   { grid-template-rows: 1fr; }
-.expand-grid.closed { grid-template-rows: 0fr; }
-.expand-inner       { overflow: hidden; min-height: 0; }
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 9999; }
+
+/* backdrop-filter während der Transition deaktivieren –
+   eingefrorener Blur macht den Header im Snapshot unsichtbar */
+.vt-running header {
+  backdrop-filter: none !important;
+}
+
+/* ── Footer Logo (matches --muted color) ─────────── */
+.logo-muted {
+  filter: brightness(0) invert(50%) sepia(100%) brightness(65%);
+  transition: filter 0.2s;
+}
+.logo-muted:hover {
+  filter: brightness(0) invert(50%) sepia(100%) brightness(82%);
+}
+.dark .logo-muted {
+  filter: brightness(0) invert(53%) sepia(35%) brightness(88%);
+}
+.dark .logo-muted:hover {
+  filter: brightness(0) invert(53%) sepia(35%) brightness(110%);
+}
+
+/* ── Hero Load Animation ─────────────────────────── */
+@keyframes hero-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-in {
+  animation: hero-up 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-d1 { animation-delay: 0.05s; }
+.hero-d2 { animation-delay: 0.22s; }
+.hero-d3 { animation-delay: 0.40s; }
+.hero-d4 { animation-delay: 0.55s; }
+
+/* ── Opening hours row stagger ───────────────────── */
+@keyframes row-slide {
+  from { transform: translateX(-10px); }
+  to   { transform: translateX(0); }
+}
+.reveal.is-visible .hours-row:nth-child(1) { animation: row-slide 0.5s cubic-bezier(0.16,1,0.3,1) 0.10s both; }
+.reveal.is-visible .hours-row:nth-child(2) { animation: row-slide 0.5s cubic-bezier(0.16,1,0.3,1) 0.18s both; }
+.reveal.is-visible .hours-row:nth-child(3) { animation: row-slide 0.5s cubic-bezier(0.16,1,0.3,1) 0.26s both; }
+.reveal.is-visible .hours-row:nth-child(4) { animation: row-slide 0.5s cubic-bezier(0.16,1,0.3,1) 0.34s both; }
+.reveal.is-visible .hours-row:nth-child(5) { animation: row-slide 0.5s cubic-bezier(0.16,1,0.3,1) 0.42s both; }
+.reveal.is-visible .hours-row:nth-child(6) { animation: row-slide 0.5s cubic-bezier(0.16,1,0.3,1) 0.50s both; }
+.reveal.is-visible .hours-row:nth-child(7) { animation: row-slide 0.5s cubic-bezier(0.16,1,0.3,1) 0.58s both; }
+
+/* ── Button shimmer ──────────────────────────────── */
+@keyframes shimmer-sweep {
+  to { transform: translateX(200%); }
+}
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.btn-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,0.22) 50%, transparent 75%);
+  transform: translateX(-100%);
+  pointer-events: none;
+}
+.btn-shimmer:hover::after {
+  animation: shimmer-sweep 0.6s ease-out forwards;
+}
+
+/* ── Reduced motion ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .hero-in                             { animation: none; opacity: 1; transform: none; }
+  .reveal                              { transition: none; opacity: 1; transform: none; }
+  .reveal.is-visible .hours-row        { animation: none; transform: none; }
+  .eyebrow::after                      { transition: none; transform: scaleX(1); }
+  .btn-shimmer::after                  { display: none; }
+}
+
+/* ── Theme-Toggle Icon Animation ─────────────────── */
+@keyframes theme-icon-in {
+  from { transform: rotate(-40deg) scale(0.5); opacity: 0; }
+  to   { transform: rotate(0deg)   scale(1);   opacity: 1; }
+}
+.theme-icon-anim {
+  display: inline-flex;
+  animation: theme-icon-in 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}

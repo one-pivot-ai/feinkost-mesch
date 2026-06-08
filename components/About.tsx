@@ -21,55 +21,64 @@ export default function About() {
   }, []);
 
   return (
-    <section id="ueber-uns" className="py-24 md:py-32 bg-[#131009]" ref={sectionRef}>
+    <section id="ueber-uns" className="py-24 md:py-32 bg-surface-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           <div className="reveal">
             <span className="eyebrow">Unsere Geschichte</span>
             <h2
-              className="mt-4 mb-6 text-[#EDE9E3]"
+              className="mt-4 mb-6 text-foreground"
               style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 400, lineHeight: 1.1 }}
             >
               Über Feinkost{' '}
-              <em style={{ color: '#D4AF5A', fontStyle: 'italic', fontWeight: 300 }}>Mesch</em>
+              <em style={{ color: 'var(--terracotta)', fontStyle: 'italic', fontWeight: 300 }}>
+                Mesch
+              </em>
             </h2>
-            <div className="space-y-4 text-[#8A8078] text-base md:text-lg leading-relaxed">
+            <div className="space-y-4 text-muted text-base md:text-lg leading-relaxed">
               <p>
-                Unsere Kundinnen und Kunden kommen von weit her, um unsere hausgemachte
-                Qualität zu genießen. Das freut uns sehr und zeichnet uns aus.
+                Unsere Kundinnen und Kunden kommen von weit her – das freut uns und
+                zeichnet uns aus. Seit 2009 machen wir das, was wir können: gute,
+                ehrliche Feinkost in Karlsfeld.
               </p>
               <p>
-                Mit handverlesenen Zutaten und traditionellen Rezepturen entstehen täglich
-                frische Spezialitäten. Unsere Cremes auf Frischkäsebasis, mediterranen
-                Kompositionen und Snacks werden ausschließlich in eigener Herstellung
-                gefertigt, ohne Kompromisse bei Qualität und Geschmack.
+                Unsere Cremes auf Frischkäsebasis, Antipasti und Snacks entstehen
+                täglich in eigener Herstellung. Handverlesene Zutaten, traditionelle
+                Rezepturen – kein Convenience Food, keine Kompromisse.
               </p>
               <p>
-                Kommen Sie auf einen leckeren Mittagssnack vorbei oder sprechen Sie uns
-                direkt an. Wir liefern in München und Umgebung und erfüllen auch besondere
-                Cateringwünsche.
+                Kommen Sie vorbei, probieren Sie etwas aus der Theke oder sprechen Sie
+                uns für Catering und Vorbestellungen direkt an.
               </p>
             </div>
           </div>
 
           <div className="reveal reveal-d2 relative">
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
               <Image
                 src="/images/catering-2.jpg"
-                alt="Feinkost Mesch – frische Spezialitäten"
+                alt="Feinkosttheke mit hausgemachten Cremes und Antipasti bei Feinkost Mesch in Karlsfeld"
                 fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover hover:scale-[1.03] transition-transform duration-700"
                 quality={85}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0806]/40 via-transparent to-transparent" />
-              <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/5" />
+              <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-border" />
             </div>
 
-            <div className="absolute -bottom-5 -left-5 bg-[#C49A3C] rounded-2xl p-5 shadow-[0_8px_30px_rgba(196,154,60,0.3)]">
-              <p className="text-[#0A0806]/55 text-[10px] font-semibold tracking-widest uppercase mb-0.5">Feinkost seit</p>
+            <div
+              className="absolute -bottom-5 -left-5 rounded-2xl p-5 shadow-lg"
+              style={{ background: 'var(--terracotta)' }}
+            >
               <p
-                className="text-[#0A0806] leading-none"
+                className="text-[10px] font-semibold tracking-widest uppercase mb-0.5"
+                style={{ color: 'rgba(255,255,255,0.65)' }}
+              >
+                Feinkost seit
+              </p>
+              <p
+                className="text-white leading-none"
                 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.8rem', fontWeight: 700 }}
               >
                 2009
