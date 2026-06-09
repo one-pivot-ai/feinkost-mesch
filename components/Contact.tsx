@@ -1,14 +1,45 @@
 'use client';
 
-import { Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 import { useEffect, useRef } from 'react';
 
 const cards = [
-  { icon: Phone, label: 'Telefon',        value: '0151 12 13 92 12',      href: 'tel:+4915112139212',                    external: false },
-  { icon: Mail,  label: 'E-Mail',         value: 'selda.kadic@yahoo.de',  href: 'mailto:selda.kadic@yahoo.de',           external: false },
-  { icon: MapPin,label: 'Adresse',        value: 'Dieselstraße 2\n85757 Karlsfeld', href: 'https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld', external: true },
-  { icon: Clock, label: 'Öffnungszeiten', value: 'Mo – Fr\n10:00 – 18:00 Uhr', href: null, external: false },
+  {
+    icon: Phone,
+    label: 'Telefon',
+    value: '0151 12 13 92 12',
+    href: 'tel:+4915112139212',
+    ariaLabel: 'Jetzt anrufen: 0151 12 13 92 12',
+    external: false,
+  },
+  {
+    icon: Mail,
+    label: 'E-Mail',
+    value: 'selda.kadic@yahoo.de',
+    href: 'mailto:selda.kadic@yahoo.de',
+    ariaLabel: 'E-Mail schreiben an selda.kadic@yahoo.de',
+    external: false,
+  },
+  {
+    icon: MessageCircle,
+    label: 'WhatsApp',
+    value: 'WhatsApp schreiben',
+    href: 'https://wa.me/4915112139212',
+    ariaLabel: 'WhatsApp-Nachricht an Feinkost Mesch senden',
+    external: true,
+  },
+  {
+    icon: MapPin,
+    label: 'Adresse',
+    value: 'Dieselstraße 2\n85757 Karlsfeld',
+    href: 'https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld',
+    ariaLabel: 'Adresse in Google Maps öffnen',
+    external: true,
+  },
 ];
+
+const MAPS_EMBED =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.5!2d11.4814428!3d48.2280862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e70aa6f9e2805%3A0x46c0b5a04acb65da!2sFeinkost%20Mesch%20Partyservice%20%26%20Catering!5e0!3m2!1sde!2sde!4v1718500000000!5m2!1sde!2sde';
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -31,6 +62,7 @@ export default function Contact() {
     <section id="kontakt" className="py-24 md:py-32 bg-surface-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
 
+        {/* Header */}
         <div className="text-center mb-14 reveal">
           <span className="eyebrow" style={{ justifyContent: 'center' }}>
             Wir freuen uns auf Sie
@@ -47,7 +79,8 @@ export default function Contact() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-12">
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {cards.map((card, i) => {
             const Icon = card.icon;
             const inner = (
@@ -69,26 +102,44 @@ export default function Contact() {
                          rounded-2xl p-7 group transition-all duration-300 hover:border-accent/30
                          hover:bg-background hover:-translate-y-0.5`;
 
-            if (card.href) {
-              return (
-                <a key={card.label} href={card.href} className={cls}
-                  {...(card.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
-                  {inner}
-                </a>
-              );
-            }
-            return <div key={card.label} className={cls}>{inner}</div>;
+            return (
+              <a
+                key={card.label}
+                href={card.href}
+                aria-label={card.ariaLabel}
+                className={cls}
+                {...(card.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              >
+                {inner}
+              </a>
+            );
           })}
         </div>
 
+        {/* Google Maps embed */}
+        <div className="reveal mb-12 rounded-2xl overflow-hidden border border-border shadow-sm h-[260px] md:h-[400px]">
+          <iframe
+            title="Feinkost Mesch Karlsfeld – Standort auf Google Maps"
+            src={MAPS_EMBED}
+            width="100%"
+            height="100%"
+            style={{ border: 0, display: 'block' }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </div>
+
+        {/* CTA */}
         <div className="text-center reveal">
           <a
             href="mailto:selda.kadic@yahoo.de?subject=Catering-Anfrage Feinkost Mesch"
+            aria-label="Catering-Anfrage per E-Mail senden"
             className="btn-shimmer inline-flex items-center gap-2.5 bg-accent text-accent-foreground
                        px-10 py-4 rounded-full font-semibold text-sm tracking-wide
                        hover:opacity-90 active:scale-[0.97] transition-all duration-200"
           >
-            <Mail size={15} />
+            <Mail size={15} aria-hidden="true" />
             Catering-Anfrage senden
           </a>
         </div>
