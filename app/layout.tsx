@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import ExternalLinkGuard from "@/components/ExternalLinkGuard";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -44,6 +45,13 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
+  icons: {
+    icon: [
+      { url: '/favicon-color.png', media: '(prefers-color-scheme: light)', type: 'image/png' },
+      { url: '/favicon-white.png', media: '(prefers-color-scheme: dark)',  type: 'image/png' },
+    ],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
+  },
   title: "Feinkost Mesch Karlsfeld | Hausgemachte Feinkost, Antipasti & Catering",
   description:
     "Feinkost Mesch in Karlsfeld: hausgemachte Frischkäsecremes, Antipasti, Mittagssnacks und Cateringplatten. Besuchen Sie uns in der Dieselstraße 2 oder fragen Sie Catering an.",
@@ -97,7 +105,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          {children}
+          <ExternalLinkGuard />
+        </ThemeProvider>
       </body>
     </html>
   );
