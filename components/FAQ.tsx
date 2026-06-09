@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Plus, Minus } from 'lucide-react';
 
 const faqs = [
   {
@@ -35,6 +36,48 @@ const faqSchema = {
   })),
 };
 
+function AccordionItem({ q, a, index }: { q: string; a: string; index: number }) {
+  const [open, setOpen] = useState(false);
+  const bodyRef = useRef<HTMLDivElement>(null);
+
+  return (
+    <div className={`reveal reveal-d${(index % 3) + 1} border border-border rounded-2xl overflow-hidden transition-colors duration-300 ${open ? 'bg-surface' : 'bg-background hover:bg-surface'}`}>
+      <button
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
+      >
+        <span
+          className="text-foreground font-semibold text-base md:text-lg leading-snug"
+          style={{ fontFamily: 'var(--font-cormorant)' }}
+        >
+          {q}
+        </span>
+        <span
+          className={`shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-colors duration-300 ${
+            open ? 'bg-accent text-accent-foreground' : 'bg-surface-muted text-muted'
+          }`}
+        >
+          {open ? <Minus size={13} strokeWidth={2.5} /> : <Plus size={13} strokeWidth={2.5} />}
+        </span>
+      </button>
+
+      <div
+        ref={bodyRef}
+        style={{
+          maxHeight: open ? `${bodyRef.current?.scrollHeight ?? 400}px` : '0px',
+          transition: 'max-height 0.35s cubic-bezier(0.16,1,0.3,1)',
+          overflow: 'hidden',
+        }}
+      >
+        <p className="text-muted text-sm md:text-base leading-relaxed px-6 pb-6">
+          {a}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function FAQ() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
@@ -58,7 +101,7 @@ export default function FAQ() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+      <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
 
         <div className="mb-14 reveal">
           <span className="eyebrow">Häufige Fragen</span>
@@ -70,20 +113,9 @@ export default function FAQ() {
           </h2>
         </div>
 
-        <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-14 gap-y-0">
+        <dl className="flex flex-col gap-3">
           {faqs.map(({ q, a }, i) => (
-            <div
-              key={q}
-              className={`reveal reveal-d${(i % 4) + 1} py-6 border-b border-border`}
-            >
-              <dt
-                className="text-foreground font-semibold mb-2 text-base md:text-lg leading-snug"
-                style={{ fontFamily: 'var(--font-cormorant)' }}
-              >
-                {q}
-              </dt>
-              <dd className="text-muted text-sm md:text-base leading-relaxed">{a}</dd>
-            </div>
+            <AccordionItem key={q} q={q} a={a} index={i} />
           ))}
         </dl>
 
