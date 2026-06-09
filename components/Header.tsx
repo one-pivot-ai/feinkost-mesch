@@ -26,6 +26,30 @@ export default function Header() {
   const pathname              = usePathname();
   const effectiveSolid        = solid || pathname !== '/';
 
+  // Scroll-spy: update URL hash as sections scroll into view
+  useEffect(() => {
+    if (pathname !== '/') return;
+    const ids = [
+      'spezialitaeten', 'catering', 'ueber-uns',
+      'oeffnungszeiten', 'faq', 'bewertungen', 'kontakt',
+    ];
+    const spy = () => {
+      let active = '';
+      for (const id of ids) {
+        const el = document.getElementById(id);
+        if (el && el.getBoundingClientRect().top <= window.innerHeight * 0.4) {
+          active = id;
+        }
+      }
+      const next = active ? `#${active}` : window.location.pathname;
+      if (window.location.hash !== (active ? `#${active}` : '')) {
+        history.replaceState(null, '', next);
+      }
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    return () => window.removeEventListener('scroll', spy);
+  }, [pathname]);
+
   useEffect(() => {
     setMounted(true);
     const handler = () => {
