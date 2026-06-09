@@ -113,15 +113,15 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-border pt-7 flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-3">
-          <p className="text-muted/70 text-xs">
+          <p className="text-muted text-xs">
             © {new Date().getFullYear()} Feinkost Mesch, Karlsfeld. Alle Rechte vorbehalten.
           </p>
-          <span className="hidden sm:block text-muted/30 text-xs">·</span>
+          <span className="hidden sm:block text-muted/50 text-xs">·</span>
           <a
             href="https://ai-pivot.de"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted/70 hover:text-muted transition-colors text-xs"
+            className="text-muted hover:text-foreground transition-colors text-xs"
           >
             Made by Pivot AI
           </a>
