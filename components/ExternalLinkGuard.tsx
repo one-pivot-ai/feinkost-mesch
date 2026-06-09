@@ -16,7 +16,13 @@ export default function ExternalLinkGuard() {
 
   const proceed = useCallback(() => {
     if (pending) {
-      window.open(pending.href, '_blank', 'noopener,noreferrer');
+      const a = document.createElement('a');
+      a.href = pending.href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
     setPending(null);
   }, [pending]);
