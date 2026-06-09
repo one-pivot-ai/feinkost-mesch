@@ -16,10 +16,13 @@ export default function ExternalLinkGuard() {
 
   const proceed = useCallback(() => {
     if (pending) {
+      // Create a bypass anchor — the capture listener checks for this flag and skips it,
+      // so the click propagates naturally and the browser treats it as a real user gesture.
       const a = document.createElement('a');
       a.href = pending.href;
       a.target = '_blank';
       a.rel = 'noopener noreferrer';
+      a.dataset.elgBypass = '1';
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -31,6 +34,9 @@ export default function ExternalLinkGuard() {
     const handler = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest('a');
       if (!target) return;
+
+      // Skip links we created ourselves in proceed()
+      if ((target as HTMLAnchorElement).dataset.elgBypass) return;
 
       const href = target.getAttribute('href');
       const isBlank = target.getAttribute('target') === '_blank';
