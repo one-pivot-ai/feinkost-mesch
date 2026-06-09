@@ -153,7 +153,7 @@ export default function Header() {
           )}
 
           <a
-            href="mailto:selda.kadic@yahoo.de?subject=Catering-Anfrage Feinkost Mesch"
+            href="#kontakt"
             className={`px-5 py-2.5 rounded-full text-[13px] font-semibold tracking-wide transition-all duration-300 ${
               effectiveSolid
                 ? 'border border-accent/60 text-accent hover:bg-accent hover:text-accent-foreground'
@@ -218,7 +218,7 @@ export default function Header() {
           )}
 
           <a
-            href="mailto:selda.kadic@yahoo.de?subject=Catering-Anfrage Feinkost Mesch"
+            href="#kontakt"
             onClick={() => setOpen(false)}
             className="mt-3 border border-accent/60 text-accent px-5 py-3.5 rounded-full font-semibold text-center text-[15px] hover:bg-accent hover:text-accent-foreground transition-all duration-300"
           >
