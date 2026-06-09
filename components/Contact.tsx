@@ -79,69 +79,53 @@ export default function Contact() {
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-          {cards.map((card, i) => {
-            const Icon = card.icon;
-            const inner = (
-              <>
-                <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-5
-                                group-hover:bg-accent group-hover:scale-110 transition-[background-color,transform] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
-                  <Icon size={17} className="text-accent group-hover:text-accent-foreground transition-colors duration-300" strokeWidth={1.5} />
-                </div>
-                <span className="text-muted text-[10px] font-semibold tracking-[0.15em] uppercase mb-2 block">
-                  {card.label}
-                </span>
-                <span className="text-foreground font-medium text-sm md:text-base whitespace-pre-line">
-                  {card.value}
-                </span>
-              </>
-            );
+        {/* Two-column: cards left, map right */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 items-stretch">
 
-            const cls = `reveal reveal-d${i + 1} flex flex-col bg-surface border border-border
-                         rounded-2xl p-7 group transition-all duration-300 hover:border-accent/30
-                         hover:bg-background hover:-translate-y-0.5`;
+          {/* Cards 2×2 */}
+          <div className="grid grid-cols-2 gap-4">
+            {cards.map((card, i) => {
+              const Icon = card.icon;
+              return (
+                <a
+                  key={card.label}
+                  href={card.href}
+                  aria-label={card.ariaLabel}
+                  className={`reveal reveal-d${i + 1} flex flex-col bg-surface border border-border
+                              rounded-2xl p-6 group transition-all duration-300 hover:border-accent/30
+                              hover:bg-background hover:-translate-y-0.5`}
+                  {...(card.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                >
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-5
+                                  group-hover:bg-accent group-hover:scale-110 transition-[background-color,transform]
+                                  duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+                    <Icon size={17} className="text-accent group-hover:text-accent-foreground transition-colors duration-300" strokeWidth={1.5} />
+                  </div>
+                  <span className="text-muted text-[10px] font-semibold tracking-[0.15em] uppercase mb-2 block">
+                    {card.label}
+                  </span>
+                  <span className="text-foreground font-medium text-sm md:text-base whitespace-pre-line">
+                    {card.value}
+                  </span>
+                </a>
+              );
+            })}
+          </div>
 
-            return (
-              <a
-                key={card.label}
-                href={card.href}
-                aria-label={card.ariaLabel}
-                className={cls}
-                {...(card.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-              >
-                {inner}
-              </a>
-            );
-          })}
-        </div>
+          {/* Map */}
+          <div className="reveal reveal-d2 rounded-2xl overflow-hidden border border-border shadow-sm min-h-[300px]">
+            <iframe
+              title="Feinkost Mesch Karlsfeld – Standort auf Google Maps"
+              src={MAPS_EMBED}
+              width="100%"
+              height="100%"
+              style={{ border: 0, display: 'block', minHeight: '300px' }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
 
-        {/* Google Maps embed */}
-        <div className="reveal mb-12 rounded-2xl overflow-hidden border border-border shadow-sm h-[260px] md:h-[400px]">
-          <iframe
-            title="Feinkost Mesch Karlsfeld – Standort auf Google Maps"
-            src={MAPS_EMBED}
-            width="100%"
-            height="100%"
-            style={{ border: 0, display: 'block' }}
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </div>
-
-        {/* CTA */}
-        <div className="text-center reveal">
-          <a
-            href="mailto:selda.kadic@yahoo.de?subject=Catering-Anfrage Feinkost Mesch"
-            aria-label="Catering-Anfrage per E-Mail senden"
-            className="btn-shimmer inline-flex items-center gap-2.5 bg-accent text-accent-foreground
-                       px-10 py-4 rounded-full font-semibold text-sm tracking-wide
-                       hover:opacity-90 active:scale-[0.97] transition-all duration-200"
-          >
-            <Mail size={15} aria-hidden="true" />
-            Catering-Anfrage senden
-          </a>
         </div>
 
       </div>
