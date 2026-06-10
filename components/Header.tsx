@@ -111,11 +111,15 @@ export default function Header() {
             alt="Feinkost Mesch Karlsfeld – Logo"
             width={180}
             height={52}
-            className={`h-11 md:h-13 w-auto brightness-0 transition-opacity duration-300 hover:opacity-100 ${
-              mounted && effectiveSolid && theme !== 'dark'
-                ? 'opacity-75'
-                : 'invert opacity-90'
-            }`}
+            className="h-11 md:h-13 w-auto transition-[filter,opacity] duration-300 hover:opacity-100"
+            style={{
+              opacity: effectiveSolid ? 0.95 : 1,
+              filter: !effectiveSolid
+                ? 'drop-shadow(0 1px 5px rgba(0,0,0,0.65)) drop-shadow(0 0 12px rgba(0,0,0,0.4))'
+                : mounted && theme === 'dark'
+                  ? 'brightness(1.15) saturate(1.1) drop-shadow(0 0 4px rgba(116,180,38,0.2))'
+                  : 'none',
+            }}
             priority
           />
         </a>

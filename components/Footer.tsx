@@ -56,7 +56,7 @@ export default function Footer() {
               alt="Feinkost Mesch Karlsfeld"
               width={160}
               height={46}
-              className="h-10 w-auto logo-muted mb-5"
+              className="h-10 w-auto mb-5"
             />
             <p className="text-muted text-sm leading-relaxed max-w-xs">
               Hausgemachte mediterrane Feinkost in Karlsfeld – seit 2009.

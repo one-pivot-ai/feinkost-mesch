@@ -32,7 +32,7 @@ export default function About() {
               style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 400, lineHeight: 1.1 }}
             >
               Über Feinkost{' '}
-              <em style={{ color: 'var(--terracotta)', fontStyle: 'italic', fontWeight: 300 }}>
+              <em style={{ color: 'var(--accent)', fontStyle: 'italic', fontWeight: 300 }}>
                 Mesch
               </em>
             </h2>
@@ -69,7 +69,7 @@ export default function About() {
 
             <div
               className="absolute -bottom-5 -left-5 rounded-2xl p-5 shadow-lg"
-              style={{ background: 'var(--terracotta)' }}
+              style={{ background: 'var(--accent)' }}
             >
               <p
                 className="text-[10px] font-semibold tracking-widest uppercase mb-0.5"

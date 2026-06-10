@@ -55,7 +55,7 @@ export default function Catering() {
               style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 400, lineHeight: 1.1 }}
             >
               Feinkostplatten für{' '}
-              <em style={{ color: 'var(--terracotta)', fontStyle: 'italic', fontWeight: 300 }}>
+              <em style={{ color: 'var(--accent)', fontStyle: 'italic', fontWeight: 300 }}>
                 jeden Anlass
               </em>
             </h2>

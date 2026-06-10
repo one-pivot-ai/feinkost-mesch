@@ -4,16 +4,16 @@
    Light mode (:root) und Dark mode (.dark class)
 ───────────────────────────────────────────────────── */
 :root {
-  --background:          #faf7f0;
-  --foreground:          #2b2118;
-  --surface:             #ffffff;
-  --surface-muted:       #f5efe3;
-  --footer-bg:           #ede8dc;
+  --background:          #f4f9ec;
+  --foreground:          #1e2b0f;
+  --surface:             #f9fdf3;
+  --surface-muted:       #edf5de;
+  --footer-bg:           #e4efce;
 
-  --border:              #e7dccb;
+  --border:              #d5e8b8;
 
-  --muted:               #6f6254;
-  --muted-light:         #8c7d6d;
+  --muted:               #5a6b44;
+  --muted-light:         #728558;
 
   --accent:              #74B426;
   --accent-foreground:   #0a0806;
@@ -27,25 +27,25 @@
   --card-dark-muted:     rgba(250, 247, 240, 0.55);
   --card-dark-accent:    #74B426;
 
-  --nav-bg:              rgba(250, 247, 240, 0.92);
+  --nav-bg:              rgba(244, 249, 236, 0.94);
 
   /* Hero-Overlay-Gradients */
-  --hero-from:           rgba(43, 33, 24, 0.82);
-  --hero-via:            rgba(43, 33, 24, 0.28);
-  --hero-side:           rgba(43, 33, 24, 0.38);
+  --hero-from:           rgba(12, 26, 4, 0.82);
+  --hero-via:            rgba(12, 26, 4, 0.28);
+  --hero-side:           rgba(12, 26, 4, 0.38);
 }
 
 .dark {
-  --background:          #0a0806;
-  --foreground:          #ede9e3;
-  --surface:             #131009;
-  --surface-muted:       #1c1812;
-  --footer-bg:           #050402;
+  --background:          #070d04;
+  --foreground:          #e8f0dc;
+  --surface:             #0e1509;
+  --surface-muted:       #141d0d;
+  --footer-bg:           #040704;
 
-  --border:              rgba(255, 255, 255, 0.08);
+  --border:              rgba(116, 180, 38, 0.12);
 
-  --muted:               #8a8078;
-  --muted-light:         #8c8174;
+  --muted:               #7a9060;
+  --muted-light:         #8ea872;
 
   --accent:              #74B426;
   --accent-foreground:   #0a0806;
@@ -58,11 +58,11 @@
   --card-dark-muted:     rgba(237, 233, 227, 0.50);
   --card-dark-accent:    #74B426;
 
-  --nav-bg:              rgba(10, 8, 6, 0.92);
+  --nav-bg:              rgba(7, 13, 4, 0.94);
 
-  --hero-from:           rgba(10, 8, 6, 1.0);
-  --hero-via:            rgba(10, 8, 6, 0.55);
-  --hero-side:           rgba(10, 8, 6, 0.60);
+  --hero-from:           rgba(7, 13, 4, 1.0);
+  --hero-via:            rgba(7, 13, 4, 0.55);
+  --hero-side:           rgba(7, 13, 4, 0.60);
 }
 
 /* ── Tailwind v4 Theme-Tokens ───────────────────── */
