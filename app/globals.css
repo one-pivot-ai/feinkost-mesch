@@ -147,10 +147,15 @@ body {
 ::view-transition-old(root) { z-index: 1; }
 ::view-transition-new(root) { z-index: 9999; }
 
-/* backdrop-filter während der Transition deaktivieren –
-   eingefrorener Blur macht den Header im Snapshot unsichtbar */
-.vt-running header {
-  backdrop-filter: none !important;
+/* Header bekommt eigene Transition-Gruppe:
+   er ist nicht im Root-Snapshot, tauscht sofort → kein Blur-Flash */
+header {
+  view-transition-name: site-header;
+}
+::view-transition-old(site-header),
+::view-transition-new(site-header) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 /* ── Footer Logo (muted neutral tone) ─────────────── */
