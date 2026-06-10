@@ -37,7 +37,7 @@ export default function Catering() {
           {/* Bild */}
           <div className="reveal relative rounded-2xl overflow-hidden aspect-[4/5] lg:h-[580px] lg:aspect-auto shadow-[0_8px_40px_rgba(0,0,0,0.10)]">
             <Image
-              src="/images/catering-1.jpg"
+              src="/images/catering-1.webp"
               alt="Mediterrane Cateringplatte von Feinkost Mesch Karlsfeld"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"

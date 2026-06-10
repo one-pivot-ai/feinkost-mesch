@@ -57,7 +57,7 @@ export default function About() {
           <div className="reveal reveal-d2 relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
               <Image
-                src="/images/catering-2.jpg"
+                src="/images/catering-2.webp"
                 alt="Feinkosttheke mit hausgemachten Cremes und Antipasti bei Feinkost Mesch in Karlsfeld"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
