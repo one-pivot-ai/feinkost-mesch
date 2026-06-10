@@ -195,7 +195,7 @@ export default function Header() {
       <div
         className={`md:hidden overflow-hidden transition-all duration-400 ${
           open ? 'max-h-[28rem] opacity-100' : 'max-h-0 opacity-0'
-        } bg-surface border-t border-border`}
+        } bg-[var(--nav-bg)] backdrop-blur-md border-t border-border`}
       >
         <nav className="flex flex-col px-5 py-5 gap-1">
           {navLinks.map((l) => (
