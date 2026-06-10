@@ -38,7 +38,6 @@ const faqSchema = {
 
 function AccordionItem({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false);
-  const bodyRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className={`reveal reveal-d${(index % 3) + 1} border border-border rounded-2xl overflow-hidden transition-colors duration-300 ${open ? 'bg-surface' : 'bg-background hover:bg-surface'}`}>
@@ -62,17 +61,13 @@ function AccordionItem({ q, a, index }: { q: string; a: string; index: number })
         </span>
       </button>
 
-      <div
-        ref={bodyRef}
-        style={{
-          maxHeight: open ? `${bodyRef.current?.scrollHeight ?? 400}px` : '0px',
-          transition: 'max-height 0.35s cubic-bezier(0.16,1,0.3,1)',
-          overflow: 'hidden',
-        }}
-      >
-        <p className="text-muted text-sm md:text-base leading-relaxed px-6 pb-6">
-          {a}
-        </p>
+      {/* CSS grid-rows transition — kein JS-scrollHeight-Measurement nötig */}
+      <div style={{ display: 'grid', gridTemplateRows: open ? '1fr' : '0fr', transition: 'grid-template-rows 0.35s cubic-bezier(0.16,1,0.3,1)' }}>
+        <div style={{ overflow: 'hidden' }}>
+          <p className="text-muted text-sm md:text-base leading-relaxed px-6 pb-6">
+            {a}
+          </p>
+        </div>
       </div>
     </div>
   );
