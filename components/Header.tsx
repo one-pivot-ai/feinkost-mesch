@@ -133,7 +133,7 @@ export default function Header() {
               className={`relative text-[13px] font-medium tracking-wide transition-colors duration-200
                 after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-px after:bg-accent
                 after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300
-                ${effectiveSolid ? 'text-muted hover:text-foreground' : 'text-white/80 hover:text-white'}`}
+                ${effectiveSolid ? 'text-muted hover:text-foreground' : 'text-white/85 hover:text-white'}`}
             >
               {l.label}
             </a>
@@ -146,7 +146,7 @@ export default function Header() {
               className={`w-8 h-8 rounded-full border flex items-center justify-center transition-colors duration-200 ${
                 effectiveSolid
                   ? 'border-border text-muted hover:text-foreground hover:border-accent/50'
-                  : 'border-white/25 text-white/70 hover:border-white/50 hover:text-white'
+                  : 'border-white/25 text-white/85 hover:border-white/50 hover:text-white'
               }`}
               aria-label="Design-Modus wechseln"
             >
@@ -161,7 +161,7 @@ export default function Header() {
             className={`px-5 py-2.5 rounded-full text-[13px] font-semibold tracking-wide transition-all duration-300 ${
               effectiveSolid
                 ? 'border border-accent/60 text-accent hover:bg-accent hover:text-accent-foreground'
-                : 'border border-white/40 text-white hover:bg-white/10'
+                : 'border border-white/40 text-white/85 hover:bg-white/10 hover:text-white'
             }`}
           >
             Catering anfragen
