@@ -21,11 +21,11 @@ export default function Hero() {
       {/* Parallax image layer — oversized top so movement never shows a gap */}
       <div className="absolute inset-x-0 bottom-0 -top-[28%]" ref={imgRef} style={{ willChange: 'transform' }}>
         <Image
-          src="/images/hero-new.jpg"
-          alt="Mediterrane Feinkostplatten und hausgemachte Cremes von Feinkost Mesch in Karlsfeld"
+          src="/images/hero-feinkost.webp"
+          alt="Mediterrane Feinkostplatten, Antipasti und hausgemachte Cremes von Feinkost Mesch in Karlsfeld"
           fill
           sizes="100vw"
-          className="object-cover object-center"
+          className="object-cover object-top"
           priority
           quality={90}
         />
