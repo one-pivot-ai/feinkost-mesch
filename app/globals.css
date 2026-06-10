@@ -15,17 +15,17 @@
   --muted:               #6f6254;
   --muted-light:         #8c7d6d;
 
-  --accent:              #7a8b45;
-  --accent-foreground:   #ffffff;
+  --accent:              #74B426;
+  --accent-foreground:   #0a0806;
 
-  --gold:                #c49a3c;
+  --gold:                #74B426;
   --terracotta:          #b85c38;
 
   /* Invertierte Karte (dunkle Karte auf hellem Hintergrund) */
   --card-dark:           #2b2118;
   --card-dark-text:      #faf7f0;
   --card-dark-muted:     rgba(250, 247, 240, 0.55);
-  --card-dark-accent:    #c49a3c;
+  --card-dark-accent:    #74B426;
 
   --nav-bg:              rgba(250, 247, 240, 0.92);
 
@@ -47,16 +47,16 @@
   --muted:               #8a8078;
   --muted-light:         #8c8174;
 
-  --accent:              #c49a3c;
+  --accent:              #74B426;
   --accent-foreground:   #0a0806;
 
-  --gold:                #c49a3c;
+  --gold:                #74B426;
   --terracotta:          #d07a52;
 
   --card-dark:           #131009;
   --card-dark-text:      #ede9e3;
   --card-dark-muted:     rgba(237, 233, 227, 0.50);
-  --card-dark-accent:    #c49a3c;
+  --card-dark-accent:    #74B426;
 
   --nav-bg:              rgba(10, 8, 6, 0.92);
 
@@ -153,19 +153,19 @@ body {
   backdrop-filter: none !important;
 }
 
-/* ── Footer Logo (matches --muted color) ─────────── */
+/* ── Footer Logo (muted neutral tone) ─────────────── */
 .logo-muted {
-  filter: brightness(0) invert(50%) sepia(100%) brightness(65%);
+  filter: brightness(0) saturate(0) invert(45%) opacity(0.7);
   transition: filter 0.2s;
 }
 .logo-muted:hover {
-  filter: brightness(0) invert(50%) sepia(100%) brightness(82%);
+  filter: brightness(0) saturate(0) invert(45%) opacity(0.9);
 }
 .dark .logo-muted {
-  filter: brightness(0) invert(53%) sepia(35%) brightness(88%);
+  filter: brightness(0) saturate(0) invert(55%) opacity(0.6);
 }
 .dark .logo-muted:hover {
-  filter: brightness(0) invert(53%) sepia(35%) brightness(110%);
+  filter: brightness(0) saturate(0) invert(55%) opacity(0.85);
 }
 
 /* ── Hero Load Animation ─────────────────────────── */
