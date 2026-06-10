@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ExternalLinkGuard from "@/components/ExternalLinkGuard";
@@ -15,6 +15,13 @@ const cormorant = Cormorant_Garamond({
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: "400",
   display: "swap",
 });
 
@@ -97,7 +104,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${cormorant.variable} ${dmSans.variable}`}
+      className={`${cormorant.variable} ${dmSans.variable} ${greatVibes.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased font-sans">
