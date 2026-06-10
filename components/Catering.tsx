@@ -95,7 +95,7 @@ export default function Catering() {
                 </a>
               </div>
               <a
-                href="mailto:selda.kadic@yahoo.de?subject=Catering-Anfrage Feinkost Mesch"
+                href="#kontakt"
                 className="btn-shimmer block w-full bg-accent text-accent-foreground py-3.5 rounded-full font-semibold text-sm text-center
                            hover:opacity-90 active:scale-[0.98] transition-all duration-200"
               >
