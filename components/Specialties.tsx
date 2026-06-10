@@ -65,10 +65,14 @@ export default function Specialties() {
           {categories.map(({ Icon, title, teaser, items }, i) => (
             <div
               key={title}
-              className={`group reveal reveal-d${i + 1} rounded-2xl p-6 border border-border bg-background`}
+              className={`group reveal reveal-d${i + 1} relative overflow-hidden rounded-2xl p-6 border border-border bg-background hover:border-accent/25 hover:shadow-sm transition-[border-color,box-shadow] duration-300`}
             >
-              <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
-                <Icon size={17} className="text-accent" strokeWidth={1.5} />
+              <span
+                aria-hidden="true"
+                className="absolute top-0 inset-x-0 h-0.5 bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              />
+              <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent group-hover:scale-110 transition-[background-color,transform] duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
+                <Icon size={17} className="text-accent group-hover:text-accent-foreground transition-colors duration-300" strokeWidth={1.5} />
               </div>
               <h3
                 className="mb-2 text-foreground leading-snug"

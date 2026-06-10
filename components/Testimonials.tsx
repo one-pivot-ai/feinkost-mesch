@@ -58,8 +58,12 @@ export default function Testimonials() {
           {reviews.map((review, i) => (
             <div
               key={review.name}
-              className={`reveal reveal-d${i + 1} flex flex-col bg-surface border border-border rounded-2xl p-7`}
+              className={`reveal reveal-d${i + 1} group relative overflow-hidden flex flex-col bg-surface border border-border rounded-2xl p-7 hover:border-accent/20 hover:shadow-sm transition-[border-color,box-shadow] duration-300`}
             >
+              <span
+                aria-hidden="true"
+                className="absolute top-0 inset-x-0 h-0.5 bg-accent origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              />
               {/* Decorative quote */}
               <span
                 aria-hidden="true"
