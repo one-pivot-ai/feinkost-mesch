@@ -32,7 +32,7 @@ export default function About() {
               style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 400, lineHeight: 1.1 }}
             >
               Über Feinkost{' '}
-              <em style={{ color: 'var(--accent)', fontStyle: 'italic', fontWeight: 300, fontFamily: 'var(--font-highlight)' }}>
+              <em style={{ color: 'var(--accent)', fontStyle: 'normal', fontWeight: 400, fontFamily: 'var(--font-highlight)' }}>
                 Mesch
               </em>
             </h2>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans, Raleway } from "next/font/google";
+import { Cormorant_Garamond, DM_Sans, Pacifico } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import ExternalLinkGuard from "@/components/ExternalLinkGuard";
@@ -18,11 +18,10 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const raleway = Raleway({
+const pacifico = Pacifico({
   variable: "--font-highlight",
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
+  weight: "400",
   display: "swap",
 });
 
@@ -105,7 +104,7 @@ export default function RootLayout({
   return (
     <html
       lang="de"
-      className={`${cormorant.variable} ${dmSans.variable} ${raleway.variable}`}
+      className={`${cormorant.variable} ${dmSans.variable} ${pacifico.variable}`}
       suppressHydrationWarning
     >
       <body className="antialiased font-sans">
