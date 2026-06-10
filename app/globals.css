@@ -5,15 +5,15 @@
 ───────────────────────────────────────────────────── */
 :root {
   --background:          #f4f9ec;
-  --foreground:          #1e2b0f;
+  --foreground:          #2b2118;
   --surface:             #f9fdf3;
   --surface-muted:       #edf5de;
   --footer-bg:           #e4efce;
 
   --border:              #d5e8b8;
 
-  --muted:               #5a6b44;
-  --muted-light:         #728558;
+  --muted:               #6b6e65;
+  --muted-light:         #878a80;
 
   --accent:              #74B426;
   --accent-foreground:   #0a0806;
@@ -44,8 +44,8 @@
 
   --border:              rgba(116, 180, 38, 0.12);
 
-  --muted:               #7a9060;
-  --muted-light:         #8ea872;
+  --muted:               #8c9286;
+  --muted-light:         #a0a69a;
 
   --accent:              #74B426;
   --accent-foreground:   #0a0806;

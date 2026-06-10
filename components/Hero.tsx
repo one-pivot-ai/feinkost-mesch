@@ -60,7 +60,7 @@ export default function Hero() {
             }}
           >
             Mediterrane Feinkost{' '}
-            <em style={{ color: '#e8d090', fontStyle: 'italic', fontWeight: 300 }}>
+            <em style={{ color: 'var(--accent)', fontStyle: 'italic', fontWeight: 300 }}>
               &amp; Catering
             </em>{' '}
             in Karlsfeld
