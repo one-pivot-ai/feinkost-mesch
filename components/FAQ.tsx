@@ -40,7 +40,8 @@ function AccordionItem({ q, a, index }: { q: string; a: string; index: number })
   const [open, setOpen] = useState(false);
 
   return (
-    <div className={`reveal reveal-d${(index % 3) + 1} border border-border rounded-2xl overflow-hidden transition-colors duration-300 ${open ? 'bg-surface' : 'bg-background hover:bg-surface'}`}>
+    <div className={`reveal reveal-d${(index % 3) + 1}`}>
+    <div className={`border border-border rounded-2xl overflow-hidden transition-colors duration-300 ${open ? 'bg-surface' : 'bg-background hover:bg-surface'}`}>
       <button
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
@@ -69,6 +70,7 @@ function AccordionItem({ q, a, index }: { q: string; a: string; index: number })
           </p>
         </div>
       </div>
+    </div>
     </div>
   );
 }
