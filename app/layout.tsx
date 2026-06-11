@@ -27,20 +27,39 @@ const pacifico = Pacifico({
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "FoodEstablishment",
+  "@type": ["LocalBusiness", "FoodEstablishment"],
   "name": "Feinkost Mesch",
+  "description": "Feinkost Mesch in Karlsfeld bietet hausgemachte Frischkäsecremes, mediterrane Antipasti, Feinkostplatten und Catering für den Münchner Raum.",
   "image": "https://feinkost-mesch.de/images/og-feinkost-mesch.jpg",
+  "logo": "https://feinkost-mesch.de/images/logo.webp",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Dieselstraße 2",
     "postalCode": "85757",
     "addressLocality": "Karlsfeld",
+    "addressRegion": "Bayern",
     "addressCountry": "DE",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.2244,
+    "longitude": 11.4682,
   },
   "telephone": "+4915112139212",
   "email": "selda.kadic@yahoo.de",
-  "servesCuisine": ["Mediterranean", "Feinkost"],
   "url": "https://feinkost-mesch.de",
+  "servesCuisine": ["Mediterranean", "Feinkost", "Antipasti"],
+  "priceRange": "€€",
+  "foundingDate": "2009",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Cash, Credit Card",
+  "areaServed": [
+    { "@type": "City", "name": "Karlsfeld" },
+    { "@type": "City", "name": "München" },
+  ],
+  "sameAs": [
+    "https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld",
+  ],
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
@@ -49,9 +68,11 @@ const jsonLd = {
       "closes": "18:00",
     },
   ],
+  "hasMap": "https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld",
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://feinkost-mesch.de"),
   icons: {
     icon: [
       { url: '/favicon-color.png', media: '(prefers-color-scheme: light)', type: 'image/png' },
@@ -77,6 +98,9 @@ export const metadata: Metadata = {
     "Catering für Firmenfeiern",
     "Catering für private Buffets",
   ],
+  alternates: {
+    canonical: "https://feinkost-mesch.de",
+  },
   openGraph: {
     title: "Feinkost Mesch Karlsfeld",
     description:
@@ -93,6 +117,21 @@ export const metadata: Metadata = {
     ],
     locale: "de_DE",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Feinkost Mesch Karlsfeld | Hausgemachte Feinkost & Catering",
+    description:
+      "Hausgemachte Frischkäsecremes, Antipasti und mediterrane Cateringplatten in Karlsfeld bei München.",
+    images: ["https://feinkost-mesch.de/images/og-feinkost-mesch.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
