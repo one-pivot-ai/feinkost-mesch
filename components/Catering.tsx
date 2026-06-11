@@ -35,7 +35,7 @@ export default function Catering() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* Bild */}
-          <div className="reveal relative rounded-2xl overflow-hidden aspect-[4/5] lg:h-[580px] lg:aspect-auto shadow-[0_8px_40px_rgba(0,0,0,0.10)]">
+          <div className="reveal from-left relative rounded-2xl overflow-hidden aspect-[4/5] lg:h-[580px] lg:aspect-auto shadow-[0_8px_40px_rgba(0,0,0,0.10)]">
             <Image
               src="/images/catering-feinkost.webp"
               alt="Mediterrane Cateringplatte von Feinkost Mesch Karlsfeld"
@@ -48,7 +48,7 @@ export default function Catering() {
           </div>
 
           {/* Text */}
-          <div className="reveal reveal-d2">
+          <div className="reveal reveal-d2 from-right">
             <span className="eyebrow">Catering in Karlsfeld &amp; München</span>
             <h2
               className="mt-4 mb-5 text-foreground"

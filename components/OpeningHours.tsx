@@ -52,7 +52,7 @@ export default function OpeningHours() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 
           {/* Öffnungszeiten */}
-          <div className="reveal">
+          <div className="reveal from-left">
             {/* Eyebrow + live status */}
             <div className="flex items-center gap-4 mb-4 flex-wrap">
               <span className="eyebrow">Öffnungszeiten</span>
@@ -120,7 +120,7 @@ export default function OpeningHours() {
           </div>
 
           {/* Anfahrt */}
-          <div className="reveal reveal-d2 lg:pt-10">
+          <div className="reveal reveal-d2 from-right lg:pt-10">
             <div className="bg-surface rounded-2xl p-8 lg:p-10 border border-border">
               <h3
                 className="text-foreground mb-7"

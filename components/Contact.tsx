@@ -113,7 +113,7 @@ export default function Contact() {
           </div>
 
           {/* Map */}
-          <div className="reveal reveal-d2 rounded-2xl overflow-hidden border border-border shadow-sm min-h-[300px]">
+          <div className="reveal reveal-d2 from-right rounded-2xl overflow-hidden border border-border shadow-sm min-h-[300px]">
             <iframe
               title="Feinkost Mesch Karlsfeld – Standort auf Google Maps"
               src={MAPS_EMBED}

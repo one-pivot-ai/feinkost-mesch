@@ -100,6 +100,9 @@ body {
   transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
               transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
+/* Directional variants — declared before .is-visible so the visible rule wins */
+.reveal.from-left  { transform: translateX(-30px); }
+.reveal.from-right { transform: translateX(30px);  }
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
@@ -226,7 +229,45 @@ header {
   .reveal.is-visible .hours-row        { animation: none; transform: none; }
   .eyebrow::after                      { transition: none; transform: scaleX(1); }
   .btn-shimmer::after                  { display: none; }
+  .reveal .founder-chip,
+  .reveal .review-star                 { opacity: 1; animation: none; }
+  .scroll-cue                          { animation: none; }
 }
+
+/* ── Hero scroll cue ─────────────────────────────── */
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0);   opacity: 0.45; }
+  50%       { transform: translateY(7px); opacity: 0.85; }
+}
+.scroll-cue {
+  animation: scroll-bounce 2.2s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* ── Founder fact chip stagger ───────────────────── */
+.reveal .founder-chip { opacity: 0; }
+@keyframes chip-pop {
+  from { opacity: 0; transform: translateY(8px) scale(0.9); }
+  to   { opacity: 1; transform: none; }
+}
+.reveal.is-visible .founder-chip:nth-child(1) { animation: chip-pop 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.50s both; }
+.reveal.is-visible .founder-chip:nth-child(2) { animation: chip-pop 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.58s both; }
+.reveal.is-visible .founder-chip:nth-child(3) { animation: chip-pop 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.66s both; }
+.reveal.is-visible .founder-chip:nth-child(4) { animation: chip-pop 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.74s both; }
+.reveal.is-visible .founder-chip:nth-child(5) { animation: chip-pop 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.82s both; }
+.reveal.is-visible .founder-chip:nth-child(6) { animation: chip-pop 0.4s cubic-bezier(0.34,1.56,0.64,1) 0.90s both; }
+
+/* ── Testimonial star stagger ────────────────────── */
+.reveal .review-star { opacity: 0; }
+@keyframes star-pop {
+  from { opacity: 0; transform: scale(0.4) rotate(-20deg); }
+  to   { opacity: 1; transform: none; }
+}
+.reveal.is-visible .review-star:nth-child(1) { animation: star-pop 0.28s cubic-bezier(0.34,1.56,0.64,1) 0.35s both; }
+.reveal.is-visible .review-star:nth-child(2) { animation: star-pop 0.28s cubic-bezier(0.34,1.56,0.64,1) 0.43s both; }
+.reveal.is-visible .review-star:nth-child(3) { animation: star-pop 0.28s cubic-bezier(0.34,1.56,0.64,1) 0.51s both; }
+.reveal.is-visible .review-star:nth-child(4) { animation: star-pop 0.28s cubic-bezier(0.34,1.56,0.64,1) 0.59s both; }
+.reveal.is-visible .review-star:nth-child(5) { animation: star-pop 0.28s cubic-bezier(0.34,1.56,0.64,1) 0.67s both; }
 
 /* ── Theme-Toggle Icon Animation ─────────────────── */
 @keyframes theme-icon-in {

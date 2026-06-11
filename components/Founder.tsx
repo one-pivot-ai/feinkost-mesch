@@ -37,7 +37,7 @@ export default function Founder() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
             {/* Text column */}
-            <div className="reveal">
+            <div className="reveal from-left">
               <span className="eyebrow">Die Inhaberin</span>
               <h2
                 className="mt-4 mb-5 text-foreground"
@@ -91,7 +91,7 @@ export default function Founder() {
                 {facts.map((f) => (
                   <li
                     key={f}
-                    className="bg-surface border border-border text-muted rounded-lg px-3 py-1.5 text-xs font-medium"
+                    className="founder-chip bg-surface border border-border text-muted rounded-lg px-3 py-1.5 text-xs font-medium"
                   >
                     {f}
                   </li>
@@ -101,7 +101,7 @@ export default function Founder() {
             </div>
 
             {/* Image column */}
-            <div className="reveal reveal-d2">
+            <div className="reveal reveal-d2 from-right">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/images/Selda.webp"

@@ -1,16 +1,19 @@
 'use client';
 
 import Image from 'next/image';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { ChevronDown } from 'lucide-react';
 
 export default function Hero() {
   const imgRef = useRef<HTMLDivElement>(null);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const handler = () => {
       if (imgRef.current) {
         imgRef.current.style.transform = `translateY(${window.scrollY * 0.22}px)`;
       }
+      setScrolled(window.scrollY > 60);
     };
     window.addEventListener('scroll', handler, { passive: true });
     return () => window.removeEventListener('scroll', handler);
@@ -40,6 +43,11 @@ export default function Hero() {
         className="absolute inset-0"
         style={{ background: 'linear-gradient(to right, var(--hero-side) 0%, transparent 55%)' }}
       />
+
+      {/* Scroll cue */}
+      <div className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-10 transition-opacity duration-500 ${scrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <ChevronDown size={22} className="text-white scroll-cue" strokeWidth={1.5} />
+      </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 w-full">

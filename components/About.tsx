@@ -3,8 +3,31 @@
 import { useEffect, useRef } from 'react';
 import Image from 'next/image';
 
+function useCountUp(ref: { current: HTMLElement | null }, end: number, start: number, duration: number) {
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      io.disconnect();
+      const t0 = performance.now();
+      const tick = (now: number) => {
+        const p = Math.min((now - t0) / duration, 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = String(Math.round(start + (end - start) * eased));
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: 0.8 });
+    io.observe(el);
+    return () => io.disconnect();
+  }, [ref, end, start, duration]);
+}
+
 export default function About() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const counterRef = useRef<HTMLParagraphElement>(null);
+  useCountUp(counterRef, 2009, 2002, 950);
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -25,7 +48,7 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
-          <div className="reveal">
+          <div className="reveal from-left">
             <span className="eyebrow">Unsere Geschichte</span>
             <h2
               className="mt-4 mb-6 text-foreground"
@@ -54,7 +77,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="reveal reveal-d2 relative">
+          <div className="reveal reveal-d2 from-right relative">
             <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
               <Image
                 src="/images/catering-2.webp"
@@ -78,6 +101,7 @@ export default function About() {
                 Feinkost seit
               </p>
               <p
+                ref={counterRef}
                 className="text-white leading-none"
                 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.8rem', fontWeight: 700 }}
               >
