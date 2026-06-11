@@ -31,6 +31,8 @@ export default function Hero() {
           className="object-cover object-top"
           priority
           quality={90}
+          placeholder="blur"
+          blurDataURL="data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAACwAQCdASoIAAgABUB8JbACdAD5aYeAAOJA52vsSufoAqDka6WEJxwbJY8N3ytpY2gAAA=="
         />
       </div>
 

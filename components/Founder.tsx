@@ -111,6 +111,8 @@ export default function Founder() {
                   className="object-cover hover:scale-[1.03] transition-transform duration-700"
                   style={{ objectPosition: '65% 20%' }}
                   quality={85}
+                  placeholder="blur"
+                  blurDataURL="data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAAAwAQCdASoIAAgABUB8JaQAA3AA/vDKYzEHrtyreL8f+Pvz0AAAAA=="
                 />
                 <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-border" />
               </div>

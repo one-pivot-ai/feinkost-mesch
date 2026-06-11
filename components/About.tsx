@@ -86,6 +86,8 @@ export default function About() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover hover:scale-[1.03] transition-transform duration-700"
                 quality={85}
+                placeholder="blur"
+                blurDataURL="data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoIAAgABUB8JQAAVWSanow8QAD7pH0gamfdbRKZWLPJAh5mXxuXgnZT2YVnur6sEKqAAA=="
               />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-border" />
             </div>
