@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { MapPin, Phone, MessageCircle, Mail, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Mail } from 'lucide-react';
 
 const hours = [
   { day: 'Montag',     time: '10:00 – 18:00 Uhr', open: true },
@@ -122,7 +122,7 @@ export default function OpeningHours() {
 
           {/* Anfahrt */}
           <div className="reveal reveal-d2 from-right lg:pt-[162px]">
-            <div className="bg-surface rounded-2xl p-8 lg:p-10 border border-border">
+            <div className="bg-surface rounded-2xl p-8 lg:p-10 border border-border h-full">
               <h3
                 className="text-foreground mb-7"
                 style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.8rem', fontWeight: 400 }}
@@ -152,17 +152,6 @@ export default function OpeningHours() {
                 ))}
               </div>
 
-              <div className="mt-8 pt-6 border-t border-border">
-                <a
-                  href="https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-accent hover:text-accent/80 transition-colors group"
-                >
-                  In Google Maps öffnen
-                  <ExternalLink size={13} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-                </a>
-              </div>
             </div>
           </div>
 
