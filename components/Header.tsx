@@ -25,6 +25,7 @@ export default function Header() {
   const { theme, setTheme }   = useTheme();
   const pathname              = usePathname();
   const effectiveSolid        = solid || pathname !== '/';
+  const navHref = (anchor: string) => pathname === '/' ? anchor : `/${anchor}`;
 
   // Scroll-spy: update URL hash as sections scroll into view
   useEffect(() => {
@@ -129,7 +130,7 @@ export default function Header() {
           {navLinks.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={navHref(l.href)}
               className={`relative text-[13px] font-medium tracking-wide transition-colors duration-200
                 after:absolute after:-bottom-0.5 after:left-0 after:right-0 after:h-px after:bg-accent
                 after:origin-left after:scale-x-0 hover:after:scale-x-100 after:transition-transform after:duration-300
@@ -157,7 +158,7 @@ export default function Header() {
           )}
 
           <a
-            href="#kontakt"
+            href={navHref('#kontakt')}
             className={`px-5 py-2.5 rounded-full text-[13px] font-semibold tracking-wide transition-all duration-300 ${
               effectiveSolid
                 ? 'border border-accent/60 text-accent hover:bg-accent hover:text-accent-foreground'
@@ -201,7 +202,7 @@ export default function Header() {
           {navLinks.map((l) => (
             <a
               key={l.href}
-              href={l.href}
+              href={navHref(l.href)}
               onClick={() => setOpen(false)}
               className="text-muted hover:text-foreground py-3 px-3 rounded-lg hover:bg-surface-muted transition-colors text-[15px] font-medium"
             >
@@ -222,7 +223,7 @@ export default function Header() {
           )}
 
           <a
-            href="#kontakt"
+            href={navHref('#kontakt')}
             onClick={() => setOpen(false)}
             className="mt-3 border border-accent/60 text-accent px-5 py-3.5 rounded-full font-semibold text-center text-[15px] hover:bg-accent hover:text-accent-foreground transition-all duration-300"
           >
