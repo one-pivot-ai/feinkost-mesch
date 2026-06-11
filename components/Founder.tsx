@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 
 const facts = [
-  'Seit 2008',
+  'Seit 2009',
   'Familiengeführt',
   'Hausgemachte Cremes',
   'Antipasti & Garnelen',
@@ -50,7 +50,7 @@ export default function Founder() {
               </h2>
 
               <p className="text-muted text-base md:text-lg leading-relaxed mb-6">
-                Selda Meschkotat hat Feinkost Mesch 2008 aus einem Lebenstraum heraus gegründet,
+                Selda Meschkotat hat Feinkost Mesch 2009 aus einem Lebenstraum heraus gegründet,
                 mit der Idee, Feinkost anders zu denken: persönlicher, frischer und handgemacht.
               </p>
 
