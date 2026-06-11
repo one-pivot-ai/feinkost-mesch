@@ -47,7 +47,7 @@ export default function OpeningHours() {
   }, []);
 
   return (
-    <section id="oeffnungszeiten" className="py-24 md:py-32 bg-background" ref={sectionRef}>
+    <section id="oeffnungszeiten" className="py-14 md:py-24 bg-background" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
 

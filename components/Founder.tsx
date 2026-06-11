@@ -33,7 +33,7 @@ export default function Founder() {
     <section className="bg-surface-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Thin divider so it reads as its own section without a hard colour break */}
-        <div className="border-t border-border pt-12 pb-16 md:pt-16 md:pb-24">
+        <div className="border-t border-border pt-10 pb-12 md:pt-14 md:pb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
             {/* Text column */}
@@ -102,7 +102,7 @@ export default function Founder() {
 
             {/* Image column */}
             <div className="reveal reveal-d2 from-right">
-              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+              <div className="relative rounded-2xl overflow-hidden aspect-[3/2] sm:aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/images/Selda.webp"
                   alt="Selda Meschkotat, Inhaberin von Feinkost Mesch"

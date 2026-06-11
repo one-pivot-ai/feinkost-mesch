@@ -59,11 +59,11 @@ export default function Contact() {
   }, []);
 
   return (
-    <section id="kontakt" className="py-24 md:py-32 bg-surface-muted" ref={sectionRef}>
+    <section id="kontakt" className="py-14 md:py-24 bg-surface-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
 
         {/* Header */}
-        <div className="text-center mb-14 reveal">
+        <div className="text-center mb-8 md:mb-14 reveal">
           <span className="eyebrow" style={{ justifyContent: 'center' }}>
             Wir freuen uns auf Sie
           </span>
@@ -82,8 +82,8 @@ export default function Contact() {
         {/* Two-column: cards left, map right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-8 items-stretch">
 
-          {/* Cards 2×2 */}
-          <div className="grid grid-cols-2 gap-4">
+          {/* Cards — 1-col on mobile, 2×2 on sm+ */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             {cards.map((card, i) => {
               const Icon = card.icon;
               return (
@@ -91,12 +91,12 @@ export default function Contact() {
                   key={card.label}
                   href={card.href}
                   aria-label={card.ariaLabel}
-                  className={`reveal reveal-d${i + 1} flex flex-col bg-surface border border-border
-                              rounded-2xl p-6 group transition-all duration-300 hover:border-accent/30
+                  className={`reveal reveal-d${i + 1} flex flex-row sm:flex-col items-center sm:items-start bg-surface border border-border
+                              rounded-2xl p-4 sm:p-6 gap-4 sm:gap-0 group transition-all duration-300 hover:border-accent/30
                               hover:bg-background hover:-translate-y-0.5`}
                   {...(card.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
                 >
-                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center mb-5
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex-shrink-0 flex items-center justify-center sm:mb-5
                                   group-hover:bg-accent group-hover:scale-110 transition-[background-color,transform]
                                   duration-300 ease-[cubic-bezier(0.34,1.56,0.64,1)]">
                     <Icon size={17} className="text-accent group-hover:text-accent-foreground transition-colors duration-300" strokeWidth={1.5} />

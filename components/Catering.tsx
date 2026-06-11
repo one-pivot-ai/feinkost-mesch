@@ -30,12 +30,12 @@ export default function Catering() {
   }, []);
 
   return (
-    <section id="catering" className="py-24 md:py-32 bg-background" ref={sectionRef}>
+    <section id="catering" className="py-14 md:py-24 bg-background" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* Bild */}
-          <div className="reveal from-left relative rounded-2xl overflow-hidden aspect-[4/5] lg:h-[580px] lg:aspect-auto shadow-[0_8px_40px_rgba(0,0,0,0.10)]">
+          <div className="reveal from-left relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[4/5] lg:h-[580px] lg:aspect-auto shadow-[0_8px_40px_rgba(0,0,0,0.10)]">
             <Image
               src="/images/catering-feinkost.webp"
               alt="Mediterrane Cateringplatte von Feinkost Mesch Karlsfeld"

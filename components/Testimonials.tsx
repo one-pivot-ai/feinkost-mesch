@@ -39,11 +39,11 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section id="bewertungen" className="py-24 md:py-32 bg-background" ref={sectionRef}>
+    <section id="bewertungen" className="py-14 md:py-24 bg-background" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
 
         {/* Header */}
-        <div className="mb-14 reveal">
+        <div className="mb-8 md:mb-14 reveal">
           <span className="eyebrow">Kundenstimmen</span>
           <h2
             className="mt-4 text-foreground"
@@ -53,12 +53,17 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">
+        {/* Cards — horizontal snap carousel on mobile, 3-col grid on md+ */}
+        <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-5 mb-8 md:mb-12
+                        overflow-x-auto snap-x snap-mandatory scroll-pl-5 md:scroll-pl-0
+                        pb-3 md:pb-0 no-scrollbar -mx-5 px-5 md:mx-0 md:px-0">
           {reviews.map((review, i) => (
             <div
               key={review.name}
-              className={`reveal reveal-d${i + 1} group relative overflow-hidden flex flex-col bg-surface border border-border rounded-2xl p-7 hover:border-accent/20 hover:shadow-sm transition-[border-color,box-shadow] duration-300`}
+              className={`reveal reveal-d${i + 1} group relative overflow-hidden flex flex-col
+                          bg-surface border border-border rounded-2xl p-5 md:p-7
+                          hover:border-accent/20 hover:shadow-sm transition-[border-color,box-shadow] duration-300
+                          snap-start shrink-0 w-[80vw] sm:w-[50vw] md:w-auto`}
             >
               <span
                 aria-hidden="true"

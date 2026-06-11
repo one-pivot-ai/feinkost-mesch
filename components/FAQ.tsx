@@ -93,14 +93,14 @@ export default function FAQ() {
   }, []);
 
   return (
-    <section id="faq" className="py-24 md:py-32 bg-surface" ref={sectionRef}>
+    <section id="faq" className="py-14 md:py-24 bg-surface" ref={sectionRef}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <div className="max-w-3xl mx-auto px-5 sm:px-8 lg:px-12">
 
-        <div className="mb-14 reveal">
+        <div className="mb-8 md:mb-14 reveal">
           <span className="eyebrow">Häufige Fragen</span>
           <h2
             className="mt-4 text-foreground"

@@ -20,7 +20,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative h-dvh min-h-[700px] flex items-end pb-20 overflow-hidden">
+    <section className="relative h-dvh min-h-[600px] flex items-end pb-16 md:pb-20 overflow-hidden">
       {/* Parallax image layer — oversized top so movement never shows a gap */}
       <div className="absolute inset-x-0 bottom-0 -top-[28%]" ref={imgRef} style={{ willChange: 'transform' }}>
         <Image
@@ -63,7 +63,7 @@ export default function Hero() {
             className="hero-in hero-d2 text-white mb-5 leading-[1.08]"
             style={{
               fontFamily: 'var(--font-cormorant)',
-              fontSize: 'clamp(2.2rem, 5vw, 3.6rem)',
+              fontSize: 'clamp(1.8rem, 5.5vw, 3.6rem)',
               fontWeight: 400,
             }}
           >

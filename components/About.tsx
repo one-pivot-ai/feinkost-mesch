@@ -44,7 +44,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="ueber-uns" className="py-24 md:py-32 bg-surface-muted" ref={sectionRef}>
+    <section id="ueber-uns" className="py-14 md:py-24 bg-surface-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
@@ -78,7 +78,7 @@ export default function About() {
           </div>
 
           <div className="reveal reveal-d2 from-right relative">
-            <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/2] sm:aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
               <Image
                 src="/images/catering-2.webp"
                 alt="Feinkosttheke mit hausgemachten Cremes und Antipasti bei Feinkost Mesch in Karlsfeld"
