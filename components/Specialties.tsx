@@ -8,7 +8,7 @@ const categories = [
     Icon: ChefHat,
     title: 'Cremes auf Frischkäsebasis',
     teaser: 'Täglich frisch nach eigener Rezeptur. Ohne Fertigzutaten.',
-    items: ['Kräutercreme', 'Paprika-Feta-Creme', 'Knoblauchcreme', 'Chili-Creme', 'Tomaten-Basilikum-Creme'],
+    items: ['Indische Creme', 'Schnittlauch Mango Creme', 'Dattel Creme mit Nüssen', 'Auberginen Creme'],
   },
   {
     Icon: Leaf,
