@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { MapPin, Phone, Mail, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, MessageCircle, Mail, ExternalLink } from 'lucide-react';
 
 const hours = [
   { day: 'Montag',     time: '10:00 – 18:00 Uhr', open: true },
@@ -14,9 +14,10 @@ const hours = [
 ];
 
 const contacts = [
-  { Icon: MapPin, label: 'Adresse',  value: 'Dieselstraße 2, 85757 Karlsfeld', href: 'https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld', external: true  },
-  { Icon: Phone,  label: 'Telefon',  value: '0151 12 13 92 12',                href: 'tel:+4915112139212',                                         external: false },
-  { Icon: Mail,   label: 'E-Mail',   value: 'selda.kadic@yahoo.de',            href: 'mailto:selda.kadic@yahoo.de',                                external: false },
+  { Icon: MapPin,          label: 'Adresse',   value: 'Dieselstraße 2, 85757 Karlsfeld', href: 'https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld', external: true  },
+  { Icon: Phone,           label: 'Telefon',   value: '0151 12 13 92 12',                href: 'tel:+4915112139212',                                         external: false },
+  { Icon: MessageCircle,   label: 'WhatsApp',  value: 'Nachricht schreiben',             href: 'https://wa.me/4915112139212',                               external: true  },
+  { Icon: Mail,            label: 'E-Mail',    value: 'selda.kadic@yahoo.de',            href: 'mailto:selda.kadic@yahoo.de',                               external: false },
 ];
 
 export default function OpeningHours() {
@@ -120,7 +121,7 @@ export default function OpeningHours() {
           </div>
 
           {/* Anfahrt */}
-          <div className="reveal reveal-d2 from-right lg:pt-10">
+          <div className="reveal reveal-d2 from-right lg:pt-[162px]">
             <div className="bg-surface rounded-2xl p-8 lg:p-10 border border-border">
               <h3
                 className="text-foreground mb-7"
