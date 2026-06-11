@@ -35,15 +35,14 @@ export default function Catering() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
           {/* Bild */}
-          <div className="reveal from-left relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[4/5] lg:h-[580px] lg:aspect-auto shadow-[0_8px_40px_rgba(0,0,0,0.10)]">
-            {/* Mobile: rotate 90° + scale to fill; sm+: normal */}
-            <div className="absolute inset-0 origin-center [transform:rotate(90deg)_scale(1.34)] sm:[transform:none]">
+          <div className="reveal from-left relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[4/5] lg:h-[580px] lg:aspect-auto shadow-[0_8px_40px_rgba(0,0,0,0.10)] bg-surface-muted">
+            <div className="absolute inset-0 origin-center [transform:rotate(-90deg)] sm:[transform:none]">
               <Image
                 src="/images/catering-feinkost.webp"
                 alt="Mediterrane Cateringplatte von Feinkost Mesch Karlsfeld"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover hover:scale-[1.03] transition-transform duration-700"
+                className="object-contain sm:object-cover hover:scale-[1.03] transition-transform duration-700"
                 quality={85}
               />
             </div>
