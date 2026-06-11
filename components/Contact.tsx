@@ -1,7 +1,7 @@
 'use client';
 
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const cards = [
   {
@@ -40,6 +40,53 @@ const cards = [
 
 const MAPS_EMBED =
   'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.5!2d11.4814428!3d48.2280862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e70aa6f9e2805%3A0x46c0b5a04acb65da!2sFeinkost%20Mesch%20Partyservice%20%26%20Catering!5e0!3m2!1sde!2sde!4v1718500000000!5m2!1sde!2sde';
+
+function MapConsent() {
+  const [accepted, setAccepted] = useState(false);
+
+  if (accepted) {
+    return (
+      <iframe
+        title="Feinkost Mesch Karlsfeld – Standort auf Google Maps"
+        src={MAPS_EMBED}
+        width="100%"
+        height="100%"
+        style={{ border: 0, display: 'block', minHeight: '300px' }}
+        allowFullScreen
+        loading="lazy"
+        referrerPolicy="no-referrer-when-downgrade"
+      />
+    );
+  }
+
+  return (
+    <div className="flex flex-col items-center justify-center h-full min-h-[300px] px-6 text-center bg-surface-muted gap-5">
+      <MapPin size={32} className="text-accent opacity-60" strokeWidth={1.5} />
+      <div>
+        <p className="font-semibold text-foreground text-sm mb-1">Karte anzeigen</p>
+        <p className="text-muted text-xs leading-relaxed max-w-[260px]">
+          Beim Laden der Karte werden Daten an Google (USA) übertragen.
+          Mit Klick auf den Button stimmen Sie dem zu.
+        </p>
+      </div>
+      <button
+        onClick={() => setAccepted(true)}
+        className="btn-shimmer bg-accent text-accent-foreground text-sm font-semibold px-5 py-2.5 rounded-full
+                   hover:opacity-90 active:scale-[0.98] transition-all duration-200"
+      >
+        Google Maps laden
+      </button>
+      <a
+        href="https://www.google.com/maps?cid=5098274478237640154"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-xs text-accent hover:underline"
+      >
+        Direkt in Google Maps öffnen ↗
+      </a>
+    </div>
+  );
+}
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -112,18 +159,9 @@ export default function Contact() {
             })}
           </div>
 
-          {/* Map */}
+          {/* Map — Zwei-Klick-Lösung (DSGVO) */}
           <div className="reveal reveal-d2 from-right rounded-2xl overflow-hidden border border-border shadow-sm min-h-[300px]">
-            <iframe
-              title="Feinkost Mesch Karlsfeld – Standort auf Google Maps"
-              src={MAPS_EMBED}
-              width="100%"
-              height="100%"
-              style={{ border: 0, display: 'block', minHeight: '300px' }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
+            <MapConsent />
           </div>
 
         </div>
