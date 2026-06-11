@@ -33,7 +33,7 @@ export default function Founder() {
     <section className="bg-surface-muted" ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         {/* Thin divider so it reads as its own section without a hard colour break */}
-        <div className="border-t border-border pt-16 pb-24 md:pt-20 md:pb-32">
+        <div className="border-t border-border pt-12 pb-16 md:pt-16 md:pb-24">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
             {/* Text column */}
@@ -91,49 +91,22 @@ export default function Founder() {
                 ))}
               </ul>
 
-              <a
-                href="#kontakt"
-                className="inline-flex items-center gap-1.5 text-accent hover:text-accent/80 font-semibold text-sm transition-colors duration-200 group"
-              >
-                Catering anfragen
-                <span className="group-hover:translate-x-0.5 transition-transform duration-200 leading-none">
-                  →
-                </span>
-              </a>
             </div>
 
             {/* Image column */}
-            <div className="reveal reveal-d2 relative">
+            <div className="reveal reveal-d2">
               <div className="relative rounded-2xl overflow-hidden aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
                 <Image
                   src="/images/Selda.webp"
                   alt="Selda Meschkotat, Inhaberin von Feinkost Mesch"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover object-center hover:scale-[1.03] transition-transform duration-700"
+                  className="object-cover object-top hover:scale-[1.03] transition-transform duration-700"
                   quality={85}
                 />
                 <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-border" />
               </div>
 
-              {/* Year badge – mirrored right to distinguish from the About badge on the left */}
-              <div
-                className="absolute -bottom-5 -right-5 rounded-2xl p-5 shadow-lg"
-                style={{ background: 'var(--accent)' }}
-              >
-                <p
-                  className="text-[10px] font-semibold tracking-widest uppercase mb-0.5"
-                  style={{ color: 'rgba(255,255,255,0.65)' }}
-                >
-                  Inhaberin seit
-                </p>
-                <p
-                  className="text-white leading-none"
-                  style={{ fontFamily: 'var(--font-cormorant)', fontSize: '1.8rem', fontWeight: 700 }}
-                >
-                  2008
-                </p>
-              </div>
             </div>
 
           </div>
