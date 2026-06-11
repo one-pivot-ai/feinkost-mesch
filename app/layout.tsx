@@ -42,8 +42,8 @@ const jsonLd = {
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 48.2244,
-    "longitude": 11.4682,
+    "latitude": 48.228086,
+    "longitude": 11.481443,
   },
   "telephone": "+4915112139212",
   "email": "selda.kadic@yahoo.de",
@@ -58,7 +58,7 @@ const jsonLd = {
     { "@type": "City", "name": "München" },
   ],
   "sameAs": [
-    "https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld",
+    "https://www.google.com/maps?cid=5098274478237640154",
   ],
   "openingHoursSpecification": [
     {
@@ -68,7 +68,7 @@ const jsonLd = {
       "closes": "18:00",
     },
   ],
-  "hasMap": "https://maps.google.com/?q=Dieselstraße+2+85757+Karlsfeld",
+  "hasMap": "https://www.google.com/maps?cid=5098274478237640154",
 };
 
 export const metadata: Metadata = {
