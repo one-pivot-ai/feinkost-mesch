@@ -103,6 +103,11 @@ body {
 /* Directional variants — declared before .is-visible so the visible rule wins */
 .reveal.from-left  { transform: translateX(-30px); }
 .reveal.from-right { transform: translateX(30px);  }
+/* On mobile (single column) side-offsets cause horizontal overflow — use vertical instead */
+@media (max-width: 767px) {
+  .reveal.from-left,
+  .reveal.from-right { transform: translateY(24px); }
+}
 .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);

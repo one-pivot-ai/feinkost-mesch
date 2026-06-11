@@ -109,7 +109,7 @@ export default function Founder() {
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover hover:scale-[1.03] transition-transform duration-700"
-                  style={{ objectPosition: '50% 45%' }}
+                  style={{ objectPosition: '50% 62%' }}
                   quality={85}
                 />
                 <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-border" />
