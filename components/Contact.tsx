@@ -74,7 +74,7 @@ export default function Contact() {
             Kontakt
           </h2>
           <p className="mt-4 text-muted text-base max-w-md mx-auto leading-relaxed">
-            Erreichen Sie uns direkt – für Bestellungen, Catering-Anfragen oder
+            Erreichen Sie uns direkt, für Bestellungen, Catering-Anfragen oder
             einen Besuch in der Dieselstraße 2.
           </p>
         </div>

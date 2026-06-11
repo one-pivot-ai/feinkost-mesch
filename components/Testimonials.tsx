@@ -9,7 +9,7 @@ const MAPS_URL =
 const reviews = [
   {
     name: 'Ruth M. Fuchs',
-    text: 'Kann ich nur empfehlen. Freundliche Beratung und Essen zum Niederknien. Ich kaufe gerne dort ein und hatte u.a. auch schon mal ein Catering für 30 Personen – inkl. Veganern und Fleischliebhabern. Alle, wirklich alle, waren restlos begeistert.',
+    text: 'Kann ich nur empfehlen. Freundliche Beratung und Essen zum Niederknien. Ich kaufe gerne dort ein und hatte u.a. auch schon mal ein Catering für 30 Personen, inkl. Veganern und Fleischliebhabern. Alle, wirklich alle, waren restlos begeistert.',
   },
   {
     name: 'Erika Kellerbauer',

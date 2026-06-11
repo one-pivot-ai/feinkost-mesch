@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     q: 'Wie kann ich Catering vorbestellen?',
-    a: 'Rufen Sie uns an oder schicken Sie uns eine E-Mail. Wir besprechen Umfang, Datum und Zusammenstellung direkt mit Ihnen – kein langer Vorlauf nötig.',
+    a: 'Rufen Sie uns an oder schicken Sie uns eine E-Mail. Wir besprechen Umfang, Datum und Zusammenstellung direkt mit Ihnen. Kein langer Vorlauf nötig.',
   },
   {
     q: 'Gibt es vegetarische Feinkostplatten?',
@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     q: 'Für welche Anlässe eignet sich das Catering?',
-    a: 'Geburtstage, Firmenfeiern, Büro-Lunches, private Buffets und kleinere Events. Auch kurzfristige Anfragen sind oft möglich – sprechen Sie uns einfach an.',
+    a: 'Geburtstage, Firmenfeiern, Büro-Lunches, private Buffets und kleinere Events. Auch kurzfristige Anfragen sind oft möglich. Sprechen Sie uns einfach an.',
   },
 ];
 

@@ -59,7 +59,7 @@ export default function Footer() {
               className="h-10 w-auto mb-5"
             />
             <p className="text-muted text-sm leading-relaxed max-w-xs">
-              Hausgemachte mediterrane Feinkost in Karlsfeld – seit 2009.
+              Hausgemachte mediterrane Feinkost in Karlsfeld. Seit 2009.
               Frischkäsecremes, Antipasti und Catering für Ihre Anlässe.
             </p>
 

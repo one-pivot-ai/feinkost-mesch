@@ -50,32 +50,39 @@ export default function Founder() {
               </h2>
 
               <p className="text-muted text-base md:text-lg leading-relaxed mb-6">
-                Selda Meschkotat hat Feinkost Mesch 2008 aus einem Lebenstraum heraus gegründet –
+                Selda Meschkotat hat Feinkost Mesch 2008 aus einem Lebenstraum heraus gegründet,
                 mit der Idee, Feinkost anders zu denken: persönlicher, frischer und handgemacht.
               </p>
 
-              <blockquote className="border-l-2 border-accent pl-5 mb-7">
-                <p
-                  className="text-foreground leading-snug"
-                  style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(1.25rem, 2.5vw, 1.55rem)', fontWeight: 400, fontStyle: 'italic' }}
+              <blockquote className="mb-7">
+                <span
+                  aria-hidden="true"
+                  className="block select-none -mb-3"
+                  style={{ fontFamily: 'var(--font-cormorant)', fontSize: '4.5rem', lineHeight: 1, color: 'var(--accent)', opacity: 0.45 }}
                 >
-                  „Feinkost einmal anders!"
+                  &ldquo;
+                </span>
+                <p
+                  className="text-foreground pl-1"
+                  style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(1.4rem, 2.8vw, 1.85rem)', fontWeight: 400, fontStyle: 'italic', lineHeight: 1.25 }}
+                >
+                  Feinkost einmal anders!
                 </p>
               </blockquote>
 
               <div className="space-y-4 text-muted text-base leading-relaxed mb-8">
                 <p>
                   Was als Backshop begann, wurde zum einzigartigen Feinkostgeschäft im Münchner
-                  Umland. Inspiriert von ihrem Schwager – einem passionierten Creme-Schöpfer aus
-                  dem Saarland – entwickelte Selda ihre eigene Handschrift: selbstgemachte
+                  Umland. Inspiriert von ihrem Schwager, einem passionierten Creme-Schöpfer aus
+                  dem Saarland, entwickelte Selda ihre eigene Handschrift: selbstgemachte
                   Frischkäsecremes, selbst eingelegte Garnelen und Antipasti mit hauseigenen
                   Gewürzmischungen und Soßen.
                 </p>
                 <p>
-                  „Klein, aber dafür fein" – als Familienunternehmen entstehen hier täglich
-                  Gaumenfreuden ohne Kompromisse: nur beste Zutaten, garantierte Frische,
+                  „Klein, aber dafür fein": Als Familienunternehmen entstehen hier täglich
+                  Gaumenfreuden ohne Kompromisse. Nur beste Zutaten, garantierte Frische,
                   keinerlei Zusätze. Ob Candle-Light-Dinner für zwei oder Partyverköstigung
-                  bis 100 Personen – Feinkost Mesch hat das Richtige für jeden Anlass.
+                  bis 100 Personen. Feinkost Mesch hat das Richtige für jeden Anlass.
                 </p>
               </div>
 

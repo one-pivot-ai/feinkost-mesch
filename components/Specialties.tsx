@@ -19,7 +19,7 @@ const categories = [
   {
     Icon: UtensilsCrossed,
     title: 'Mittagssnacks',
-    teaser: 'Frische, leichte Snacks für die Pause – zum Mitnehmen.',
+    teaser: 'Frische, leichte Snacks für die Pause, zum Mitnehmen.',
     items: ['Frische Snacks zum Mitnehmen', 'Belegte Spezialitäten', 'Kleine Mittagsgerichte', 'Leichte Feinkostboxen'],
   },
   {

@@ -68,7 +68,7 @@ export default function Hero() {
 
           <p className="hero-in hero-d3 text-white/70 text-base md:text-lg leading-relaxed mb-10 max-w-xl">
             Hausgemachte Frischkäsecremes, Antipasti, Mittagssnacks und
-            Cateringplatten – frisch zubereitet in der Dieselstraße 2.
+            Cateringplatten, frisch zubereitet in der Dieselstraße 2.
           </p>
 
           <div className="hero-in hero-d4 flex flex-wrap gap-3">

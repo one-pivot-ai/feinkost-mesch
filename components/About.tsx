@@ -38,14 +38,14 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-muted text-base md:text-lg leading-relaxed">
               <p>
-                Unsere Kundinnen und Kunden kommen von weit her – das freut uns und
+                Unsere Kundinnen und Kunden kommen von weit her. Das freut uns und
                 zeichnet uns aus. Seit 2009 machen wir das, was wir können: gute,
                 ehrliche Feinkost in Karlsfeld.
               </p>
               <p>
                 Unsere Cremes auf Frischkäsebasis, Antipasti und Snacks entstehen
                 täglich in eigener Herstellung. Handverlesene Zutaten, traditionelle
-                Rezepturen – kein Convenience Food, keine Kompromisse.
+                Rezepturen. Kein Convenience Food, keine Kompromisse.
               </p>
               <p>
                 Kommen Sie vorbei, probieren Sie etwas aus der Theke oder sprechen Sie
