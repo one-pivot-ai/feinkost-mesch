@@ -78,17 +78,15 @@ export default function About() {
           </div>
 
           <div className="reveal reveal-d2 from-right relative">
-            <div className="relative rounded-2xl overflow-hidden aspect-[3/2] sm:aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)] bg-surface-muted">
-              <div className="absolute inset-0 origin-center [transform:rotate(-90deg)_scale(1.5)] sm:[transform:none]">
-                <Image
-                  src="/images/catering-2.webp"
-                  alt="Feinkosttheke mit hausgemachten Cremes und Antipasti bei Feinkost Mesch in Karlsfeld"
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-contain sm:object-cover hover:scale-[1.03] transition-transform duration-700"
-                  quality={85}
-                />
-              </div>
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/2] sm:aspect-[4/5] shadow-[0_12px_40px_rgba(43,33,24,0.12)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/images/catering-2.webp"
+                alt="Feinkosttheke mit hausgemachten Cremes und Antipasti bei Feinkost Mesch in Karlsfeld"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover hover:scale-[1.03] transition-transform duration-700"
+                quality={85}
+              />
               <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-border" />
             </div>
 
