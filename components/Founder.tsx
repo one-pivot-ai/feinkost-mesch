@@ -54,20 +54,16 @@ export default function Founder() {
                 mit der Idee, Feinkost anders zu denken: persönlicher, frischer und handgemacht.
               </p>
 
-              <blockquote className="mb-7">
-                <span
-                  aria-hidden="true"
-                  className="block select-none -mb-3"
-                  style={{ fontFamily: 'var(--font-cormorant)', fontSize: '4.5rem', lineHeight: 1, color: 'var(--accent)', opacity: 0.45 }}
-                >
-                  &ldquo;
-                </span>
+              <blockquote className="border-l-[3px] border-accent pl-5 mb-7">
                 <p
-                  className="text-foreground pl-1"
-                  style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(1.4rem, 2.8vw, 1.85rem)', fontWeight: 400, fontStyle: 'italic', lineHeight: 1.25 }}
+                  className="text-foreground"
+                  style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(1.4rem, 2.8vw, 1.85rem)', fontWeight: 400, fontStyle: 'italic', lineHeight: 1.3 }}
                 >
                   Feinkost einmal anders!
                 </p>
+                <footer className="mt-1.5 text-xs font-semibold tracking-[0.15em] uppercase text-accent">
+                  Selda Meschkotat
+                </footer>
               </blockquote>
 
               <div className="space-y-4 text-muted text-base leading-relaxed mb-8">
@@ -78,11 +74,16 @@ export default function Founder() {
                   Frischkäsecremes, selbst eingelegte Garnelen und Antipasti mit hauseigenen
                   Gewürzmischungen und Soßen.
                 </p>
+                <blockquote className="border-l-[3px] border-accent/40 pl-4">
+                  <p className="text-muted" style={{ fontFamily: 'var(--font-cormorant)', fontSize: 'clamp(1.05rem, 2vw, 1.2rem)', fontStyle: 'italic', lineHeight: 1.5 }}>
+                    Klein, aber dafür fein.
+                  </p>
+                </blockquote>
                 <p>
-                  „Klein, aber dafür fein": Als Familienunternehmen entstehen hier täglich
-                  Gaumenfreuden ohne Kompromisse. Nur beste Zutaten, garantierte Frische,
-                  keinerlei Zusätze. Ob Candle-Light-Dinner für zwei oder Partyverköstigung
-                  bis 100 Personen. Feinkost Mesch hat das Richtige für jeden Anlass.
+                  Als Familienunternehmen entstehen hier täglich Gaumenfreuden ohne Kompromisse.
+                  Nur beste Zutaten, garantierte Frische, keinerlei Zusätze. Ob Candle-Light-Dinner
+                  für zwei oder Partyverköstigung bis 100 Personen — Feinkost Mesch hat das Richtige
+                  für jeden Anlass.
                 </p>
               </div>
 
